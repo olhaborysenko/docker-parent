@@ -45,7 +45,7 @@ RUN mvn clean package
 # --------- Final Runtime Image ---------
 FROM alpine:3.13.0@sha256:d0710affa17fad5f466a70159cc458227bd25d4afb39514ef662ead3e6c99515
 
-ENV PATH=$PATH:/opt/jdk
+ENV PATH=$PATH:/opt/jdk/bin
 ARG GIT_REPO_DIR
 
 # Create a non-root user
