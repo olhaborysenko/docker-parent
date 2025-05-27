@@ -1,0 +1,10 @@
+[
+  {
+  	"ParameterKey": "KeyName",
+  	"ParameterValue": "DemoKey"
+  },
+  {
+    "ParameterKey": "UserARN",
+    "ParameterValue": "arn:aws:iam::767397687056:role/EC2ImageBuilderRole,arn:aws:iam::767397687056:root"
+  }
+]

@@ -1,0 +1,51 @@
+name: 'component-debug'
+description: 'Debugging EC2 Image Builder component.'
+schemaVersion: 1.0
+
+phases:
+  - name: install
+    steps:
+      - name: InstallPhase
+        action: ExecuteBash
+        inputs:
+          commands:
+            - |
+              set -e
+              echo "[INSTALL] Starting..."
+              touch /tmp/install-debug.txt
+              echo "[INSTALL] Completed."
+
+  - name: build
+    steps:
+      - name: BuildPhase
+        action: ExecuteBash
+        inputs:
+          commands:
+            - |
+              set -e
+              echo "[BUILD] Starting..."
+              touch /tmp/build-debug.txt
+              echo "[BUILD] Completed."
+
+  - name: validate
+    steps:
+      - name: ValidatePhase
+        action: ExecuteBash
+        inputs:
+          commands:
+            - |
+              set -e
+              echo "[VALIDATE] Checking debug files..."
+              ls -lh /tmp/*debug.txt
+              echo "[VALIDATE] Completed."
+
+  - name: test
+    steps:
+      - name: TestPhase
+        action: ExecuteBash
+        inputs:
+          commands:
+            - |
+              set -e
+              echo "[TEST] Test logic here..."
+              echo "[TEST] Completed."
